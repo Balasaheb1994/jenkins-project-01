@@ -1,0 +1,13 @@
+FROM ubuntu#pull image from DockerHub
+MAINTAINER mayank@gmail.com# person who maintains dockerimage
+CMD ["nginx", "-g", "daemon off;"] # command executed when container is launched from this image
+RUN apt-get update #commands mentioned here are executed on existing image
+LABEL "author=mayank"# specify metadata
+EXPOSE 90 # specify network port for docker container
+ENV workdirectory /usr/node # used to set enviroment variable key-value
+ADD source destinaton     #copies file from your host to dockare image, fetch remote URL
+COPY source destinatin    # copies file from current host to docker image
+ENTRYPOINT ["df -h"]  #first command when docker container starts
+VOLUME /etc/host    # to create or mount volume to container
+USER admin    # admin user will execute CMD and ENTRYPOINT commands
+WORKDIRCMD /myapp # To set current working directory of container
